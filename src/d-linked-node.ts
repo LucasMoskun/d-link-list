@@ -1,7 +1,7 @@
-export class DoubleLinkedNode<T> {
+export class DLinkedNode<T> {
   value: T;
-  next: DoubleLinkedNode<T> | null = null;
-  prev: DoubleLinkedNode<T> | null = null;
+  next: DLinkedNode<T> | null = null;
+  prev: DLinkedNode<T> | null = null;
 
   constructor(value: T) {
     this.value = value;
