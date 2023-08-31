@@ -1,7 +1,7 @@
 {
   "name": "d-linked-list",
   "version": "0.0.1",
-  "description": "typescript double linked list implementation with added accessors, removers, and inserter utils. As well and a map function that returns an index on each iteration",
+  "description": "typescript double linked list implementation with added accessors, removers, and inserter utils. As well as a map function that returns an index on each iteration",
   "main": "dist/index.js",
   "scripts": {
     "test": "npx ts-node ./src/sample/sample.ts"
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "double",
+    "doubly",
     "linked",
     "list",
     "typescript",
