@@ -113,3 +113,13 @@ doubleList.removeAtIndex(2);
 
 console.log("tailValue");
 console.log(doubleList.tailValue());
+
+console.log("for of iterator");
+for (let item of doubleList) {
+  console.log(item);
+}
+
+console.log("values iterator (less copies)");
+for (let item of doubleList.values()) {
+  console.log(item);
+}

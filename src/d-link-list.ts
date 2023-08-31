@@ -347,4 +347,26 @@ export class DLinkList<T> {
     }
     return newList;
   }
+
+  [Symbol.iterator]() {
+    let currentNode = this.head;
+    return {
+      next: () => {
+        if (currentNode) {
+          const value = currentNode.value;
+          currentNode = currentNode.next;
+          return { value, done: false };
+        }
+        return { done: true };
+      },
+    };
+  }
+
+  *values() {
+    let currentNode = this.head;
+    while (currentNode) {
+      yield currentNode.value;
+      currentNode = currentNode.next;
+    }
+  }
 }
