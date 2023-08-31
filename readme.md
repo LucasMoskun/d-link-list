@@ -1,13 +1,21 @@
-# D-Linked-List
+# D-Link-List
 
-- A typescript double linked list implementation with added length, accessors, removers, and inserter utils. As well as a map function that returns an index on each iteration",
+- A typescript double linked list implementation with added length, accessors, removers, and inserter utils. As well as a map function that returns an index on each iteration. Avoids copies -- which is also something to be aware of when mutating objects
 
-Sample:
+##### Install
+
+[d-link-list npm registry](https://www.npmjs.com/package/d-link-list)
+
+```
+yarn add d-link-list
+```
+
+##### Sample
 
 ```ts
-import { DLinkedList } from "../d-linked-list";
+import { DLinkList } from "../d-link-list";
 
-const doubleList = new DLinkedList<string>();
+const doubleList = new DLinkList<string>();
 doubleList.push("apple");
 doubleList.push("banana");
 doubleList.push("cherry");
@@ -120,4 +128,14 @@ doubleList.removeAtIndex(2);
 
 console.log("tailValue");
 console.log(doubleList.tailValue());
+
+console.log("for of iterator");
+for (let item of doubleList) {
+  console.log(item);
+}
+
+console.log("values iterator (less copies)");
+for (let item of doubleList.values()) {
+  console.log(item);
+}
 ```
