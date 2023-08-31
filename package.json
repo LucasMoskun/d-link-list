@@ -1,0 +1,29 @@
+{
+  "name": "d-linked-list",
+  "version": "0.0.1",
+  "description": "typescript double linked list implementation with added accessors, removers, and inserter utils. As well and a map function that returns an index on each iteration",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasMoskun/d-linked-list.git"
+  },
+  "keywords": [
+    "double",
+    "linked",
+    "list",
+    "typescript",
+    "map",
+    "index",
+    "utils",
+    "stl"
+  ],
+  "author": "Lucas Moskun <Contact@LucasMoskun.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucasMoskun/d-linked-list/issues"
+  },
+  "homepage": "https://github.com/LucasMoskun/d-linked-list#readme"
+}
