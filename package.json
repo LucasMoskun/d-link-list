@@ -20,10 +20,13 @@
     "utils",
     "stl"
   ],
-  "author": "Lucas Moskun <Contact@LucasMoskun.com>",
+  "author": "Lucas Moskun",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LucasMoskun/d-linked-list/issues"
   },
-  "homepage": "https://github.com/LucasMoskun/d-linked-list#readme"
+  "homepage": "https://github.com/LucasMoskun/d-linked-list#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
