@@ -4,7 +4,7 @@
   "description": "typescript double linked list implementation with added accessors, removers, and inserter utils. As well and a map function that returns an index on each iteration",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx ts-node ./src/sample/sample.ts"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/LucasMoskun/d-linked-list#readme",
   "devDependencies": {
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }
