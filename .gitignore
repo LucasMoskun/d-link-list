@@ -91,6 +91,7 @@ out
 .nuxt
 /dist/*
 !/dist/index.js
+!/dist/index.d.ts
 
 # Gatsby files
 .cache/
