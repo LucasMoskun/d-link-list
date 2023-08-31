@@ -1,10 +1,14 @@
 {
   "name": "d-link-list",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "typescript double linked list implementation with added accessors, removers, and inserter utils. As well as a map function that returns an index on each iteration",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "npx ts-node ./src/sample/sample.ts",
+    "test:build": "npx tsc && node ./dist/sample/sample.js",
     "build": "npx tsc"
   },
   "repository": {
