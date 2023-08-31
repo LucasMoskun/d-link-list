@@ -13,7 +13,7 @@ yarn add d-link-list
 ##### Sample
 
 ```ts
-import { DLinkList } from "../d-link-list";
+import { DLinkList } from "d-link-list";
 
 const doubleList = new DLinkList<string>();
 doubleList.push("apple");
