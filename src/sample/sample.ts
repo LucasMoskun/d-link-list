@@ -1,6 +1,6 @@
-import { DLinkedList } from "../d-linked-list";
+import { DLinkList } from "../d-link-list";
 
-const doubleList = new DLinkedList<string>();
+const doubleList = new DLinkList<string>();
 doubleList.push("apple");
 doubleList.push("banana");
 doubleList.push("cherry");

@@ -1,8 +1,8 @@
-import { DLinkedNode } from "./d-linked-node";
+import { DLinkNode } from "./d-link-node";
 
-export class DLinkedList<T> {
-  private head: DLinkedNode<T> | null = null;
-  private tail: DLinkedNode<T> | null = null;
+export class DLinkList<T> {
+  private head: DLinkNode<T> | null = null;
+  private tail: DLinkNode<T> | null = null;
   private _length = 0;
 
   get length(): number {
@@ -13,7 +13,7 @@ export class DLinkedList<T> {
     return this.head?.value;
   }
 
-  headNode(): DLinkedNode<T> | null {
+  headNode(): DLinkNode<T> | null {
     return this.head;
   }
 
@@ -21,12 +21,12 @@ export class DLinkedList<T> {
     return this.tail?.value;
   }
 
-  tailNode(): DLinkedNode<T> | null {
+  tailNode(): DLinkNode<T> | null {
     return this.tail;
   }
 
   push(value: T): void {
-    const node = new DLinkedNode(value);
+    const node = new DLinkNode(value);
     if (this.head === null) {
       this.head = node;
       this.tail = node;
@@ -71,7 +71,7 @@ export class DLinkedList<T> {
   }
 
   unshift(value: T): void {
-    const node = new DLinkedNode(value);
+    const node = new DLinkNode(value);
     if (this.head === null) {
       this.head = node;
       this.tail = node;
@@ -141,7 +141,7 @@ export class DLinkedList<T> {
     return -1;
   }
 
-  getIndexOfNode(node: DLinkedNode<T>): number {
+  getIndexOfNode(node: DLinkNode<T>): number {
     let currentNode = this.head;
     let currentIndex = 0;
     while (currentNode !== null) {
@@ -154,7 +154,7 @@ export class DLinkedList<T> {
     return -1;
   }
 
-  getAtIndex(index: number): DLinkedNode<T> | undefined {
+  getAtIndex(index: number): DLinkNode<T> | undefined {
     if (index < 0 || index >= this._length) {
       return undefined;
     }
@@ -170,7 +170,7 @@ export class DLinkedList<T> {
     return undefined;
   }
 
-  getByValue(value: T): DLinkedNode<T> | undefined {
+  getByValue(value: T): DLinkNode<T> | undefined {
     let currentNode = this.head;
     while (currentNode !== null) {
       if (currentNode.value === value) {
@@ -201,7 +201,7 @@ export class DLinkedList<T> {
     return undefined;
   }
 
-  removeNode(node: DLinkedNode<T>): T | undefined {
+  removeNode(node: DLinkNode<T>): T | undefined {
     if (node === null) {
       return undefined;
     }
@@ -250,7 +250,7 @@ export class DLinkedList<T> {
     let currentIndex = 0;
     while (currentNode !== null) {
       if (currentIndex === index) {
-        const node = new DLinkedNode(value);
+        const node = new DLinkNode(value);
         node.next = currentNode.next;
         node.prev = currentNode;
         if (currentNode.next === null) {
@@ -266,11 +266,11 @@ export class DLinkedList<T> {
       currentIndex++;
     }
   }
-  addNext(value: T, node: DLinkedNode<T>): void {
+  addNext(value: T, node: DLinkNode<T>): void {
     if (node === null) {
       return;
     }
-    const newNode = new DLinkedNode(value);
+    const newNode = new DLinkNode(value);
     newNode.next = node.next;
     newNode.prev = node;
     if (node.next !== null) {
@@ -294,7 +294,7 @@ export class DLinkedList<T> {
     let currentIndex = 0;
     while (currentNode !== null) {
       if (currentIndex === index) {
-        const node = new DLinkedNode(value);
+        const node = new DLinkNode(value);
         node.next = currentNode;
         node.prev = currentNode.prev;
         currentNode.prev = node;
@@ -309,8 +309,8 @@ export class DLinkedList<T> {
     }
   }
 
-  addPrev(value: T, node: DLinkedNode<T>): void {
-    const newNode = new DLinkedNode(value);
+  addPrev(value: T, node: DLinkNode<T>): void {
+    const newNode = new DLinkNode(value);
     newNode.next = node;
     newNode.prev = node.prev;
     if (node.prev !== null) {
@@ -336,8 +336,8 @@ export class DLinkedList<T> {
     return array;
   }
 
-  map<W>(callback: (value: T, index: number) => W): DLinkedList<W> {
-    const newList = new DLinkedList<W>();
+  map<W>(callback: (value: T, index: number) => W): DLinkList<W> {
+    const newList = new DLinkList<W>();
     let currentNode = this.head;
     let index = 0;
     while (currentNode !== null) {

@@ -1,6 +1,6 @@
 // index.js
-const DLinkedList = require("./d-linked-list");
-const DLinkedNode = require("./d-linked-node");
+const DLinkedList = require("./d-link-list");
+const DLinkedNode = require("./d-link-node");
 
 module.exports = {
   DLinkedList,
