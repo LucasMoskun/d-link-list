@@ -33,6 +33,9 @@ declare module "d-link-list" {
     addNext(value: T, node: DLinkNode<T>): void;
     addPrevToIndex(value: T, index: number): void;
     addPrev(value: T, node: DLinkNode<T>): void;
+    swapAtIndex(index1: number, index2: number): void;
+    swapNodeAtIndex(node: DLinkNode<T>, index: number): void;
+    swapNodes(node1: DLinkNode<T>, node2: DLinkNode<T>): void;
     toArray(): T[];
     map<W>(callback: (value: T, index: number) => W): DLinkList<W>;
     [Symbol.iterator](): Iterator<T>;
