@@ -353,9 +353,7 @@ export class DLinkList<T> {
     if (node === null) {
       return;
     }
-    console.log("swapNodeAtIndex");
     let node2 = this.getAtIndex(index);
-    console.log("got node");
     if (node2 === null) {
       return;
     }
