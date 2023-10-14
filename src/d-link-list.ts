@@ -326,12 +326,106 @@ export class DLinkList<T> {
     }
   }
 
+  swapAtIndex(index1: number, index2: number) {
+    if (
+      index1 < 0 ||
+      index1 >= this._length ||
+      index2 < 0 ||
+      index2 >= this._length
+    ) {
+      return;
+    }
+    if (index1 === index2) {
+      return;
+    }
+    let node1 = this.getAtIndex(index1);
+    let node2 = this.getAtIndex(index2);
+    if (node1 === null || node2 === null) {
+      return;
+    }
+    this.swapNodes(node1, node2);
+  }
+
+  swapNodeAtIndex(node: DLinkNode<T>, index: any) {
+    if (index < 0 || index >= this._length) {
+      return;
+    }
+    if (node === null) {
+      return;
+    }
+    console.log("swapNodeAtIndex");
+    let node2 = this.getAtIndex(index);
+    console.log("got node");
+    if (node2 === null) {
+      return;
+    }
+    this.swapNodes(node, node2);
+  }
+
+  swapNodes(node1: DLinkNode<T>, node2: DLinkNode<T>) {
+    if (node1 === node2) {
+      return;
+    }
+    if (node2.next === node1) {
+      const temp = node1;
+      node1 = node2;
+      node2 = temp;
+    }
+
+    const tempPrev = node1.prev;
+    const tempNext = node1.next;
+
+    if (node1.next === node2) {
+      node1.prev = node2;
+      node1.next = node2.next;
+      node2.prev = tempPrev;
+      node2.next = node1;
+    } else {
+      node1.prev = node2.prev;
+      node1.next = node2.next;
+      node2.prev = tempPrev;
+      node2.next = tempNext;
+    }
+    if (node1.prev !== null) {
+      node1.prev.next = node1;
+    }
+    if (node1.next !== null) {
+      node1.next.prev = node1;
+    }
+    if (node2.prev !== null) {
+      node2.prev.next = node2;
+    }
+    if (node2.next !== null) {
+      node2.next.prev = node2;
+    }
+    if (node1 === this.head) {
+      this.head = node2;
+    } else if (node2 === this.head) {
+      this.head = node1;
+    }
+    if (node1 === this.tail) {
+      this.tail = node2;
+    } else if (node2 === this.tail) {
+      this.tail = node1;
+    }
+  }
+
   toArray(): T[] {
     const array: T[] = [];
     let currentNode = this.head;
     while (currentNode !== null) {
       array.push(currentNode.value);
       currentNode = currentNode.next;
+    }
+    return array;
+  }
+
+  toArrayReverse(): T[] {
+    const array: T[] = [];
+    let currentNode = this.tail;
+    while (currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.prev;
     }
     return array;
   }

@@ -123,3 +123,16 @@ console.log("values iterator (less copies)");
 for (let item of doubleList.values()) {
   console.log(item);
 }
+
+console.log("Swap");
+doubleList.push("apple");
+doubleList.push("banana");
+doubleList.push("cherry");
+console.log("before swap: ", doubleList.toArray());
+const node = doubleList.getAtIndex(3);
+const node2 = doubleList.getAtIndex(4);
+doubleList.swapNodes(node!, node2!);
+doubleList.swapAtIndex(0, 4);
+const node3 = doubleList.getAtIndex(0);
+doubleList.swapNodeAtIndex(node3!, 1);
+console.log("after swap: ", doubleList.toArray());
