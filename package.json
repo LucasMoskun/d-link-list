@@ -1,6 +1,6 @@
 {
   "name": "d-link-list",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "typescript double linked list implementation with added accessors, removers, and inserter utils. As well as a map function that returns an index on each iteration",
   "main": "dist/index.js",
   "files": [
